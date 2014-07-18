@@ -12,7 +12,12 @@ angular.module('myPostWebApp', [
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+        .when('/allPosts', {
+            templateUrl: 'views/allPosts.html',
+            controller: 'postCtrl'
+        })
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+    .constant('baseUrl', 'http://localhost:10000/api');

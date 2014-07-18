@@ -4,6 +4,6 @@ dist
 .sass-cache
 app/bower_components
 
-
-
+npm-debug.log
+.idea
 test/
