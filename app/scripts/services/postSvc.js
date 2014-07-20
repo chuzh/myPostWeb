@@ -7,6 +7,7 @@ angular.module('myPostWebApp')
     .factory('postSvc', ['$resource', 'baseUrl',
     function($resource, baseUrl) {
         return $resource(baseUrl+'/post/findAll',{},{
-            findAll: {method: 'GET', isArray: true}
+            findAll: {method: 'GET', isArray: true},
+            findPostById: {method: 'GET', url: baseUrl + '/post/findPostById/:id'}
         });
     }]);

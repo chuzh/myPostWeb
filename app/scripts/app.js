@@ -12,9 +12,13 @@ angular.module('myPostWebApp', [
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-        .when('/allPosts', {
-            templateUrl: 'views/allPosts.html',
-            controller: 'postCtrl'
+        .when('/postList', {
+            templateUrl: 'views/postList.html',
+            controller: 'postListCtrl'
+        })
+        .when('/commentList/:post_id', {
+            templateUrl: 'views/commentList.html',
+            controller: 'commentListCtrl'
         })
       .otherwise({
         redirectTo: '/'
