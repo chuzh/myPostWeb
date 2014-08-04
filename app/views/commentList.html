@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+	<div>{{post.title}}</div>
+    <ul>
+        <li ng-repeat="comment in commentList">
+            <div>[{{$index + 1}}] {{comment.content}}  </div>
+                <div>submitted by {{comment.author.name}} /<div>
+        </li>
+    </ul>
+</body>
+</html>

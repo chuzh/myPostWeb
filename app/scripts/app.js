@@ -12,7 +12,11 @@ angular.module('myPostWeb')
        $routeProvider
            .when('/',{
                templateUrl:'views/postList.html',
-               controller:'postCtrl'
+               controller:'postListCtrl'
+           })
+           .when('/commentList/:post_id',{
+               templateUrl:'views/commentList.html',
+               controller:'commentListCtrl'
            })
            .otherwise({
                redirectTo:'/'

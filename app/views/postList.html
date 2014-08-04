@@ -1,6 +1,9 @@
 <div>
-    <div ng-repeat="post in postList">
-        <div>{{post.title}}</div>
-        <div>{{post.comments.length}} comments</div>
-    </div>
+    <ul>
+        <li ng-repeat="post in postList">
+            <div>[{{$index + 1}}] {{post.title}}  </div>
+            <div>submitted by {{post.author.name}} /<div>
+                <div><a ng-href="#/commentList/{{post._id}}">{{post.comments.length}} comments </a></div>
+        </li>
+    </ul>
 </div>

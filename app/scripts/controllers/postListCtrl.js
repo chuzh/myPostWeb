@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('myPostWeb')
-.controller('postCtrl',[
+.controller('postListCtrl',[
    '$scope','postSvc',function($scope,postSvc){
             postSvc.findAll(function(posts){
                 $scope.postList = posts;
