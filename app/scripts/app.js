@@ -1,5 +1,8 @@
+'use restrict';
+
 angular.module('myPostWeb',[
- 'ngRoute'
+ 'ngRoute',
+ 'ngResource'
 ]);
 
 angular.module('myPostWeb')
@@ -15,4 +18,5 @@ angular.module('myPostWeb')
                redirectTo:'/'
            })
    }
-]);
+])
+.constant('serviceBaseUrl','http://localhost:10000/api')
