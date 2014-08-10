@@ -2,7 +2,7 @@
 
 angular.module('myPostWeb',[
  'ngRoute',
- 'ngResource'
+ 'myPostWeb.services'
 ]);
 
 angular.module('myPostWeb')

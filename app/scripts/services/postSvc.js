@@ -1,6 +1,10 @@
 'use strict';
 
-angular.module('myPostWeb')
+angular.module('myPostWeb.services',[
+    'ngResource'
+]);
+
+angular.module('myPostWeb.services')
     .factory('postSvc', ['$resource', 'serviceBaseUrl',
         function($resource, serviceBaseUrl) {
             return $resource(serviceBaseUrl+'/post/findAll',{},{
