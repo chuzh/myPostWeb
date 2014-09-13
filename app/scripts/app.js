@@ -13,11 +13,18 @@ angular.module('myPostWeb')
        $routeProvider
            .when('/',{
                templateUrl:'views/postList.html',
-               controller:'postListCtrl'
+               controller:'postListCtrl',
+               caseInsensitiveMatch: true
+           })
+           .when('/postList',{
+               templateUrl:'views/postList.html',
+               controller:'postListCtrl',
+               caseInsensitiveMatch: true
            })
            .when('/commentList/:post_id',{
                templateUrl:'views/commentList.html',
-               controller:'commentListCtrl'
+               controller:'commentListCtrl',
+               caseInsensitiveMatch: true
            })
            .otherwise({
                redirectTo:'/'
