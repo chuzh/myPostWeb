@@ -1,6 +1,8 @@
-app/bower_modules
-.idea
+app/bower_modules/angular/*
+app/bower_modules/*/
 
+
+.idea
 
 
 node_modules/
