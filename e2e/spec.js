@@ -7,7 +7,7 @@ describe('angularjs homepage', function() {
     });
 
     it('should have the postList', function() {
-        expect(postList.count()).toEqual(2); // This is wrong!
+        expect(postList.count()).toEqual(2);
         expect(postList.first().getText()).toContain('[1] This iceberg llks like Batman');
         expect(postList.first().getText()).toContain('2 comments');
         expect(postList.last().getText()).toContain('[2] Came in to get spayed. Seems a little worried');
@@ -16,7 +16,7 @@ describe('angularjs homepage', function() {
 
     it('should execute ng-click and change url when ng-href specified', function() {
         var link = element(by.id('post1'));
-        expect(link.getAttribute('href')).toMatch(/\/post1$/);
+        expect(link.getAttribute('href')).toMatch(/\/commentList\/post1$/);
         link.click();
 
         // At this point, we navigate away from an Angular page, so we need
@@ -24,8 +24,8 @@ describe('angularjs homepage', function() {
 
         browser.wait(function() {
             return browser.driver.getCurrentUrl().then(function(url) {
-                return url.match(/\/post1$/);
+                return url.match(/\/commentList\/post1$/);
             });
-        }, 5000, 'page should navigate to /post1');
+        }, 5000, 'page should navigate to /commentList/post1');
     });
 });
