@@ -49,9 +49,16 @@ module.exports = function(config) {
 
       // Continuous Integration mode
       // if true, it capture browsers, run tests and exit
-      singleRun: false,
+      singleRun: true,
       reporters: ['progress', 'coverage'],
-      preprocessors: { 'app/scripts/**/*.js': ['coverage'] }
+      preprocessors: { 'app/scripts/**/*.js': ['coverage'] },
+      coverageReporter: {
+          'dir': 'coverage',
+          'subdir': function(browser) {
+              return browser.toLowerCase().split(/[ /-]/)[0];
+          },
+          'file': 'index.html'
+      }
   });
 
 };

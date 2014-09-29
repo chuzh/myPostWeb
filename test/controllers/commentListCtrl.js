@@ -1,8 +1,8 @@
 'use strict';
 
 
-describe('Controller: postListCtrl', function () {
-var mockPostList = [
+describe('Controller: commentListCtrl', function () {
+var mockPost =
     {
         "_id":"post1",
         "category":"Arts",
@@ -46,56 +46,10 @@ var mockPostList = [
         },
         "create_time": "2013-01-01 10:10"
 
-    },
-    {
-        "_id":"post2",
-        "category":"Arts",
-        "title":"Came in to get spayed. Seems a little worried",
-        "picture":"",
-        "comments":[
-            {
-                "id":"comment21",
-                "post":{
-                    "id":"post2"
-                },
-                "author":{
-                    "name": "seancouver",
-                    "author_id": "author2"
-                },
-                "content":"looks like Bark Wahlberg to me.",
-                "create_time": "2013-01-02 11:12",
-                "comments":[]
-            } ,
-            {
-                "id":"comment22",
-                "post":{
-                    "id":"post2"
-                },
-                "author":{
-                    "name": "dusthimself",
-                    "author_id": "author2"
-                },
-                "content":"looks like Bark Wahlberg to me.",
-                "create_time": "2013-01-02 11:12",
-                "comments":[]
-            }
-        ],
-        "author": {
-            "id": "author2",
-            "name": "seancouver"
-        },
-        "receipient":{
-            "id": "xxx",
-            "name": "eightbitlincoln"
-        },
-        "create_time": "2013-01-01 10:10"
-
-    }
-
-];
+    };
 
     var
-    postListCtrl, scope;
+    commentListCtrl, scope;
 
     var $httpBackend,
         serviceBaseUrl;
@@ -113,8 +67,9 @@ var mockPostList = [
     // Initialize the controller and a mock scope
     beforeEach(inject(function ($controller, $rootScope) {
         scope = $rootScope.$new();
-        postListCtrl = $controller('postListCtrl', {
-            $scope: scope
+        commentListCtrl = $controller('commentListCtrl', {
+            $scope: scope,
+            $routeParams: {post_id: 'post1'}
         });
     }));
 
@@ -126,15 +81,14 @@ var mockPostList = [
     */
     it('should get posts', function () {
         $httpBackend
-            .expectGET(serviceBaseUrl + '/post/findAll').
-            respond(mockPostList);
+            .expectGET(serviceBaseUrl + '/post/findPostById/post1').
+            respond(mockPost);
 
         //simulate response
         $httpBackend.flush();
 
         //verify results
-        expect(scope.postList.length).toEqual(mockPostList.length);
-        expect(scope.postList[0]._id).toEqual(mockPostList[0]._id);
+        expect(scope.commentList.length).toEqual(mockPost.comments.length);
     });
 
 

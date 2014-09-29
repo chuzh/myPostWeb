@@ -8,8 +8,9 @@ angular.module('myPostWeb')
             postSvc.findPostById(params,
                 function(post){
                 $scope.commentList = post.comments;
-            },
+            }
+                /*,
                 function(err){
                 alert(err);
-            });
+            }*/);
         }]);

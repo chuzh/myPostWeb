@@ -4,9 +4,13 @@
   "dependencies": {
     "karma-ng-scenario": "~0.1.0"
   },
+  "scripts": {
+    "e2e": "protractor e2e/config.js",
+    "start": "webdriver-manager start"
+  },
   "devDependencies": {
     "jasmine": "^2.0.1",
-    "karma": "~0.10.9",
+    "karma": "^0.12.23",
     "karma-chrome-launcher": "~0.1.2",
     "karma-coffee-preprocessor": "~0.1.2",
     "karma-coverage": "*",
