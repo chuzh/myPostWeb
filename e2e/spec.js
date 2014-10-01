@@ -3,7 +3,7 @@ describe('angularjs homepage', function() {
     var postList = element.all(by.repeater('post in postList'));
 
     beforeEach(function() {
-        browser.get('http://localhost:63342/myPostWeb/app/index.html#/');
+        browser.get('/myPostWeb/app/index.html#/');
     });
 
     it('should have the postList', function() {

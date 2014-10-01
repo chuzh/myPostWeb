@@ -1,11 +1,13 @@
 exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
+    baseUrl: 'http://localhost:63342',
     specs: ['spec.js'],
     capabilities: {
         browserName: 'phantomjs',
         version: '',
         platform: 'ANY'
     },
+
     // -----------------------------------------------------------------
     // Browser and Capabilities: Chrome
     // -----------------------------------------------------------------
