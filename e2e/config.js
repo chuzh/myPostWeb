@@ -4,8 +4,7 @@ exports.config = {
     specs: ['spec.js'],
     capabilities: {
         browserName: 'phantomjs',
-        version: '',
-        platform: 'ANY'
+        'phantomjs.binary.path': './node_modules/karma-phantomjs-launcher/node_modules/phantomjs/bin/phantomjs'
     },
 
     // -----------------------------------------------------------------
@@ -17,6 +16,7 @@ exports.config = {
         version: '',
         platform: 'ANY'
     },*/
+    singleRun: true,
     // Options to be passed to Jasmine-node.
     jasmineNodeOpts: {
         showColors: true, // Use colors in the command line report.

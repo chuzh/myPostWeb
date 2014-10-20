@@ -3,7 +3,8 @@
 angular.module('myPostWeb',[
  'ngRoute',
  'myPostWeb.services',
-  'myPostWeb.directives'
+  'myPostWeb.directives',
+  'ui.bootstrap'
 ]);
 
 angular.module('myPostWeb')
